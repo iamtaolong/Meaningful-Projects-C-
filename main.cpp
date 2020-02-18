@@ -1,31 +1,61 @@
 #include <iostream>
-#include <vector>
-#include<cassert>
 using namespace std;
 
-// print the values of two variables
-void print_values(int num1, int num2) {
-    cout << "Value of num1 is: " << num1 << endl;
-    cout << "Value of num2 is: " << num2 << endl;
+class Faculty{
+public:
+    string name;
+    string id;
+    string address;
+    string DoB;
+    string degree;
+//getter and setter for salary
+    double getSalary() {return salary;}
+    void setSalary(double salary);
+/* 1) create a getter and setter for each variable in the class*/
+
+    static void setName(string name){};
+    static void setID(string id){};
+    static void setAddress(string addess){};
+    static void setDoB(string DoB){};
+    static void setDegree(string degree){};
+    string getName(){return name;};
+    string getID(){return id;};
+    string getAdress(){return address;};
+    string getDoB(){return DoB;};
+    string getDegree(){return degree;};
+
+
+
+
+
+
+private:
+    double salary;
+    double SSN;
+};
+
+void Faculty::setSalary(double s){
+    salary=s;
 }
-// swap values of two variables
-void swap(int* num1, int* num2) {
-    cout<<"Swap function"<<endl;
-    int temp;
-    temp = *num1; // save the value of num1
-    *num1 = *num2; // copy over num2 to num1
-    *num2 = temp; // copy the saved value of num1
-}
+
+/* 2) implement each setter and getter */
 
 int main() {
+    Faculty prof;
+    Faculty prof2;
 
-    int num1 = 10;
-    int num2 = 20;
-    //int temp=num1;
-    cout << "Before Swapping: " << endl;
-    print_values(num1, num2); // function call
-    swap(&num1, &num2); // swap values?
-    cout << "After Swapping: " << endl;
-    print_values(num1, num2); // function call
 
+/* 3) use the implemented methods to fill prof' info and print them out */
+
+    prof.setName("Tao");
+    prof.setID("12345");
+    prof.setAddress("Magnolia Hall");
+    prof.setDoB("CSC");
+    prof.setDegree("Bachelor");
+    prof.getName();
+    prof.getAdress();
+    prof.getDoB();
+    prof.getDegree();
+
+    return 0;
 }
